@@ -1,0 +1,73 @@
+Task 1 : (Skill Mapping - Basic)
+================================
+
+
+-- SQL query to fetch “FIRST_NAME” from the Worker table using the alias name <WORKER_NAME>.
+
+	select FIRST_NAME as Worker_Name from Worker;
+
+-- SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
+
+	select POSITION('a' IN first_name) from Worker where First_Name = 'Amitabh';
+
+-- SQL query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
+
+	select replace(FIRST_NAME,'a','A') from Worker;
+
+-- SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+
+	select *from Worker order by FIRST_NAME asc;
+
+-- SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+
+	select *from Worker order by FIRST_NAME,DEPARTMENT desc;
+
+-- SQL query to print details for Workers with the first name as “Vipul” and “Satish” from the Worker table.
+
+	select *from Worker where FIRST_NAME IN('Vipul','Satish');
+
+-- SQL query to print details of Workers with DEPARTMENT name as “Admin”
+
+	select *from Worker where DEPARTMENT IN('Admin');
+
+-- SQL query to print details of the Workers whose FIRST_NAME contains ‘a'
+
+	select *from Worker where FIRST_NAME Like('a%');
+
+
+Task 2 : (Skill Mapping - Intermediate)
+=======================================
+
+
+-- SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+
+	select *from Worker where SALARY Between 100000 and 500000;
+
+-- SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+
+	select *from Worker where FIRST_NAME like('______h');
+
+-- SQL query to print details of the Workers who have joined in Feb’2014.
+
+	select *from Worker where Joining_Date Like('%FEB-14');
+
+-- SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+
+	select *from Worker where Salary>=50000 AND Salary<=100000;
+
+
+Task 3 : (Skill Mapping - Expert)
+================================
+
+
+-- SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name, and city
+
+	select name,cust_name,salesman.city from salesman,customer where salesman.city=customer.city;
+
+-- SQL query to find the salesperson(s) and the customer(s) he represents. Return Customer Name, city, Salesman, and commission.
+
+	select cust_name,customer.city,name,commission from customer,salesman where salesman.salesman_id=customer.salesman_id;
+
+-- SQL query to find salespeople who received commissions of more than 12 percent from the company. Return Customer Name, customer city, Salesman, and commission.
+
+	select cust_name,customer.city,name,commission from salesman,customer where commission>.12 and salesman.salesman_id=customer.salesman_id;
