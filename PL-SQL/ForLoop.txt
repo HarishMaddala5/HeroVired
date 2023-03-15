@@ -1,0 +1,11 @@
+SQL> declare
+  2  i number;
+  3  n number;
+  4  begin
+  5  n:=&n;
+  6  for i in 1..n
+  7  loop
+  8  dbms_output.put_line(i);
+  9  end loop;
+ 10  end;
+ 11  /

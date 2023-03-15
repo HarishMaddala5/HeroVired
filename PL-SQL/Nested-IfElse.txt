@@ -1,0 +1,21 @@
+SQL> declare
+  2  a number;
+  3  b number;
+  4  c number;
+  5  begin
+  6  a:=10;
+  7  b:=20;
+  8  c:=5;
+  9  if a>b then
+ 10     if a>c then
+ 11             dbms_output.put_line('a is greater');
+ 12     else
+ 13             dbms_output.put_line('c is greater');
+ 14     end if;
+ 15  elsif b>c then
+ 16     dbms_output.put_line('b is greater');
+ 17  else
+ 18     dbms_output.put_line('c is greater');
+ 19  end if;
+ 20  end;
+ 21  /
