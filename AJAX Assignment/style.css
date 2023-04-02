@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    scroll-behavior: smooth;
+}
+body{
+    min-height: 100vh;
+    background: rgb(118, 118, 118);
+}
+.head{
+    height: 70px;
+    background: rgb(56, 56, 56);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.icon{
+    height: inherit;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+}
+.search{
+    height:inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+input{
+    width:600px;
+    outline: none;
+    height: 38px;
+    border-radius: 18px;
+    border: none;
+    margin: 0px 30px;
+    color: rgb(49, 50, 51);
+    padding: 0px 20px;
+    font-size: 27px;
+    font-weight: lighter !important;
+}
+.search button{
+    background: rgb(255, 0, 0);
+    color: #FFF;
+    padding: 10px 20px;
+    font-weight: 1000;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: none;
+    border: none;   
+}
+.movies{
+    color: white;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .7s ease-in-out;
+    height: 100vh;
+}
+.movies .image{
+    position: relative;
+    margin: 10px;
+    transition: all .7s ease-in-out;
+    cursor: pointer;
+    height: 420px;
+    width: 320px;
+}
+.rating{
+    background: rgba(0, 0, 0, 0.432);
+    padding: 8px 15px;
+    border-radius: 25px;
+    z-index: 2;
+}
+.movies .image img{
+    position: absolute;
+    height:400px;
+    width:300px;
+}
+.error{
+    color: #FFF;
+}
+.movies .image .rating{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: rgb(255, 255, 255);
+}
+.overview{
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    height:400px;
+    width:300px;
+    top: 400;
+    display: none;
+    font-size: 18px;
+    color: white;
+    background: rgba(0, 0, 0, 0.178);
+    backdrop-filter: blur(15px);
+    overflow-y: scroll;
+}
+.image:hover .overview{
+    display: block;
+    top:0;
+}
